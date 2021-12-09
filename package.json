@@ -1,0 +1,33 @@
+{
+  "name": "app.js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "engines": {
+    "node": "14.16.0",
+    "npm": "7.12.0"
+  },
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon .",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install ---prefix LUG-FrontEnd && npm run build --prefix LUG-FrontEnd"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "config": "^3.3.6",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "joi": "^17.4.2",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "mongoose": "^6.0.5",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
