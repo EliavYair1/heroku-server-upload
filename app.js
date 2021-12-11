@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const PORT = 4000;
+
 const mongoose = require("mongoose");
 const usersRoute = require("./routes/users");
 const auth = require("./routes/auth");
@@ -20,16 +20,6 @@ mongoose
   })
   .then(() => console.log("connected to mongoDb"))
   .catch((e) => console.log(e, "error in connection"));
-
-if (process.env.NODE_ENV === "production") {
-  //set static folder
-  //all the javascript and css files will be read and served from this folder
-  app.use(express.static("../Lug-FrontEnd/build"));
-  //index.html for all pages routes
-  app.get("+", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../Lug-FrontEnd", "build", "index.html"));
-  });
-}
 
 
 app.use(require("morgan")("dev"));
