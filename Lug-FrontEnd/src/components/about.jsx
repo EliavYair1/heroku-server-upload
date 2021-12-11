@@ -1,7 +1,7 @@
-import React from "react";
-import "../components/css components/about.css";
-import Footer from "./footer";
-import team from "../services/theTeam";
+import React from 'react';
+import '../components/css components/about.css';
+import Footer from './footer';
+import team from '../services/theTeam';
 const About = () => {
   const teamMate = team();
   return (
@@ -89,7 +89,7 @@ const About = () => {
                       </li>
                       <li>
                         <p>
-                          {" "}
+                          {' '}
                           Deliver An Additional Value With Events For Our
                           Premium Customers
                         </p>

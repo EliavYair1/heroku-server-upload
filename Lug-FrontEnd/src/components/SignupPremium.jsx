@@ -1,15 +1,15 @@
-import Form from "./common/form";
-import Joi from "joi";
-import "./css components/signuppremium.css";
-import userService from "../services/userService";
-import { motion } from "framer-motion";
+import Form from './common/form';
+import Joi from 'joi';
+import './css components/signuppremium.css';
+import userService from '../services/userService';
+import { motion } from 'framer-motion';
 class SignupPremium extends Form {
   state = {
     form: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      password: "",
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
     },
   };
   // create schema for sign up premium component (validate in form component)
@@ -30,7 +30,7 @@ class SignupPremium extends Form {
     try {
       await userService.createUser(body);
       await userService.login(body.email, body.password);
-      window.location = "/events";
+      window.location = '/';
     } catch ({ response }) {
       if (response && response.status === 400) {
         this.setState({ errors: { email: response.data } });
@@ -42,16 +42,16 @@ class SignupPremium extends Form {
     const headerVariants = {
       hidden: {
         opacity: 0,
-        x: "100vw",
+        x: '100vw',
       },
       visible: {
         opacity: 1,
         x: 0,
         transition: {
-          type: "spring",
+          type: 'spring',
           mass: 0.4,
           damping: 8,
-          when: "beforeChildren",
+          when: 'beforeChildren',
           staggerChildren: 0.4,
         },
       },
@@ -68,13 +68,13 @@ class SignupPremium extends Form {
     const FVariants = {
       hidden: {
         opacity: 0,
-        y: "100vh",
+        y: '100vh',
       },
       visible: {
         opacity: 1,
         y: 0,
         transition: {
-          type: "tween",
+          type: 'tween',
         },
       },
     };
@@ -113,12 +113,12 @@ class SignupPremium extends Form {
                   animate="visible"
                   onSubmit={this.handleSubmit}
                 >
-                  {this.renderInput("firstName", "First Name", "text", true)}
-                  {this.renderInput("lastName", "Last Name", "text", true)}
-                  {this.renderInput("email", "Email", "text", true)}
-                  {this.renderInput("password", "Password", "password", true)}
+                  {this.renderInput('firstName', 'First Name', 'text', true)}
+                  {this.renderInput('lastName', 'Last Name', 'text', true)}
+                  {this.renderInput('email', 'Email', 'text', true)}
+                  {this.renderInput('password', 'Password', 'password', true)}
 
-                  <div className="m-5 px-5">{this.renderButton("Sign Up")}</div>
+                  <div className="m-5 px-5">{this.renderButton('Sign Up')}</div>
                 </motion.form>
               </div>
             </div>
