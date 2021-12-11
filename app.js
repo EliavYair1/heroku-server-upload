@@ -30,5 +30,5 @@ app.use("/levelup/auth", auth);
 //route for user (crud)
 app.use("/levelup/users", usersRoute);
 
-/* LISTEN TO PORT */
+/* LISTENING TO PORT */
 app.listen(process.env.PORT || 4000, () => console.log(`server is running `));
