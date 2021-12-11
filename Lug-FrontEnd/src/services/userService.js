@@ -16,7 +16,7 @@ export function getJwt() {
 
 // creates a new user by request to the server
 export function createUser(user) {
-    return httpService.post(`${storeUrl}/users`, user)
+    return httpService.post(`${storeUrl}/levelup/users`, user)
 
 }
 //a function that login the user by his email and password abd set the token key (x-auth-token) and the token into the localstorage
@@ -25,7 +25,7 @@ export async function login(email, password) {
         data: {
             token
         }
-    } = await httpService.post(`${storeUrl}/auth`, {
+    } = await httpService.post(`${storeUrl}/levelup/auth`, {
         email,
         password
     })
@@ -47,7 +47,7 @@ export function logout() {
 };
 // a function that will output the user data by id
 export function getUserInfo(id) {
-    return httpService.get(`${storeUrl}/users/${id}`)
+    return httpService.get(`${storeUrl}/levelup/users/${id}`)
 
 }
 //a function that will edit the user data
@@ -55,11 +55,11 @@ export function editUser({
     _id,
     ...body
 }) {
-    return httpService.put(`${storeUrl}/users/${_id}`, body)
+    return httpService.put(`${storeUrl}/levelup/users/${_id}`, body)
 
 } //delete the user 
 export function deleteUser(id) {
-    return httpService.delete(`${storeUrl}/users/${id}`);
+    return httpService.delete(`${storeUrl}/levelup/users/${id}`);
 }
 
 const userService = {
