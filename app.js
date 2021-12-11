@@ -11,21 +11,16 @@ const {
   path
 } = require("express/lib/application");
 require('dotenv').config()
+const MONGO_URL = process.env.MONGO_URL || "mongodb+srv://EliavYair:Yy355312@levelupcluster.rxzan.mongodb.net/LevelUpGamingDB?retryWrites=true&w=majority"
 /*  CONNeCTION TO MONGO */
 mongoose
-  .connect(process.env.MONGO_URL, {
+  .connect(MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
   .then(() => console.log("connected to mongoDb"))
   .catch((e) => console.log(e, "error in connection"));
-// mongoose
-//   .connect("mongodb://localhost/level_up", {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//   })
-//   .then(() => console.log("connected to mongoDb"))
-//   .catch((e) => console.log(e, "error in connection"));
+
 if (process.env.NODE_ENV === "production") {
   //set static folder
   //all the javascript and css files will be read and served from this folder
