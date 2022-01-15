@@ -1,0 +1,28 @@
+.store-container {
+  width: 120vw;
+  min-height: 100vh;
+}
+
+@media only screen and (min-width: 350px) and (max-width: 600px) {
+  .store-container {
+    width: 60vw;
+    padding: 50px 50px 40px 40px;
+    padding-bottom: 10px;
+    margin-left: -10px;
+  }
+  .store-header {
+    font-size: 0.6em;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .store-container {
+    width: 60vw;
+    padding: 50px 50px 40px 40px;
+    padding-bottom: 10px;
+    margin-left: -10px;
+  }
+  .store-header {
+    font-size: 0.6em;
+  }
+}

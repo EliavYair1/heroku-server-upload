@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import StoreModel from './storeModal';
 import { SRLWrapper } from 'simple-react-lightbox';
-
+import './css components/product.css';
 const Product = ({
   item: { title, price, desc, id, img, details },
   addToCart,
@@ -25,10 +25,7 @@ const Product = ({
 
   return (
     <>
-      <div
-        className="card col-md-6 mt-5 col-lg-6 col-xl-4 col-12 m-3 text-center border border-dark shadow-lg p-3 bg-body rounded"
-        style={{ width: '20rem' }}
-      >
+      <div className="card col-md-4 mt-5 col-lg-4 col-xl-3 col-12 m-3 text-center border border-dark shadow-lg p-3 bg-body rounded prod-card">
         <SRLWrapper>
           <img src={img} className="card-img-top" alt={title} />
         </SRLWrapper>
@@ -44,18 +41,17 @@ const Product = ({
 
           <div className="card-text amount mb-3">{desc}</div>
 
-          <div className="buttons d-flex ">
+          <div className="buttons d-flex btn-card">
             <button
               className="btn btn-primary me-4"
               onClick={() => showModal(img, title, details)}
             >
-              Info <i className="bi bi-info-lg text-light "></i>
+              <i className="bi bi-info-lg text-light "></i>
             </button>
             <button
-              className="btn btn-success ms-3"
+              className="btn btn-success ms-3 btn-card"
               onClick={() => addToCart(id)}
             >
-              Add To
               <i className="bi bi-cart text-light ms-1"></i>
             </button>
           </div>

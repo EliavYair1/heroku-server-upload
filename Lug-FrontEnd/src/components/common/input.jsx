@@ -1,4 +1,4 @@
-import "../css components/input.css";
+import '../css components/input.css';
 const Input = ({ required, name, label, error, ...rest }) => {
   return (
     <div className="form-group">
@@ -10,7 +10,7 @@ const Input = ({ required, name, label, error, ...rest }) => {
         {...rest}
         name={name}
         id={name}
-        className="form-control myInput display-6"
+        className="form-control myInput display-6 mob-input"
       />
       {error && <span className="text-danger">{error} </span>}
     </div>

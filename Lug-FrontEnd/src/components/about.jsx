@@ -2,111 +2,117 @@ import React from 'react';
 import '../components/css components/about.css';
 import Footer from './footer';
 import team from '../services/theTeam';
+import logo from '../logo/new logo revised/HD file.png';
 const About = () => {
   const teamMate = team();
   return (
     <>
       <div className="container-fluid aboutContainer ">
-        <h1
-          className="about-title text-center display-3 pt-5"
-          data-aos="fade-left"
-          data-aos-offset="300"
-          data-aos-easing="ease-in"
-          data-aos-duration="1000"
-        >
-          About Us
-        </h1>
+        <h1 className="about-title text-center display-3 pt-5">About Us</h1>
         <br />
         <div className="row ">
           <div className="col-12 text-center d-flex flex-column align-items-center ">
             {teamMate.map((user) => {
               return (
-                <div
-                  className="row bg-dark mb-5 mt-5 userContainer d-lg-flex flex-lg-row d-xl-flex flex-xl-row d-md-flex flex-md-column  d-sm-flex flex-sm-column align-items-sm-center align-items-md-center "
-                  key={user.id}
-                  data-aos="fade-up"
-                  data-aos-offset="300"
-                  data-aos-easing="ease-in"
-                  data-aos-duration="1500"
-                >
-                  <div className="col-8 text-light mt-5 order-first order-md-last order-sm-last">
-                    <h2 className="">
-                      {user.firstName} &nbsp;
-                      {user.lastName}
-                    </h2>
-                    <p className="title ">{user.title}</p>
-                    <p className="">{user.city}</p>
-                    <p className="mb-5">{user.age}</p>
-                    <a href={`mailto:${user.email}`}>
-                      <i className="bi bi-envelope m-2" />
-                    </a>
-                    <a href={user.gitHub} target="blank">
-                      <i className="bi bi-github m-2" />
-                    </a>
-                    <a href={user.linkedin} target="blank">
-                      <i className="bi bi-linkedin m-2" />
-                    </a>
-                    <a href={user.facebook} target="blank">
-                      <i className="bi bi-facebook m-2" />
-                    </a>
-                  </div>
-                  <div className="col-4">
-                    <img
-                      className=" img-fluid aboutUsImage"
-                      src={user.img}
-                      alt=""
-                    />
+                <div className="container" key={user.id}>
+                  <div className="row d-flex justify-content-center ">
+                    <div
+                      className="col-9 d-flex justify-content-around text-light mt-5  flex-lg-row flex-md-column  align-items-md-center
+                     align-items-sm-center
+                      flex-sm-column  bg-dark main-team-container"
+                    >
+                      <div className="col-11 col-lg-8 col-md-8 col-sm-8 mt-4 inner-team-container">
+                        <h2 className="">
+                          {user.firstName} &nbsp;
+                          {user.lastName}
+                        </h2>
+                        <p className="title ">{user.title}</p>
+                        <p className="">{user.city}</p>
+                        <p className="">{user.age}</p>
+                        <div className="team-icon-row">
+                          <a href={`mailto:${user.email}`}>
+                            <i className="bi bi-envelope text-light  m-2" />
+                          </a>
+                          <a href={user.gitHub} target="blank">
+                            <i className="bi bi-github m-2" />
+                          </a>
+                          <a href={user.linkedin} target="blank">
+                            <i className="bi bi-linkedin m-2" />
+                          </a>
+                          <a href={user.facebook} target="blank">
+                            <i className="bi bi-facebook m-2" />
+                          </a>
+                        </div>
+                      </div>
+                      <div className="col-4 col-md-8 col-sm-8 text-light p-3    ">
+                        <img
+                          className="img-fluid aboutUsImage"
+                          src={user.img}
+                          alt=""
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               );
             })}
           </div>
         </div>
-        <div className="upper container ">
-          <div
-            className="  vision bg-image "
-            data-aos="fade-up-right"
-            data-aos-offset="300"
-            data-aos-easing="ease-in"
-            data-aos-duration="2000"
-          >
+        <br />
+        <div className="upper container mt-5  ">
+          <div className="vision bg-image ">
             <div className="container-fluid">
-              <div className="row">
+              <div className="row ">
                 <div className="col-12">
-                  <div className="m-5  p-5 text-center ">
-                    <h2 className="mt-5">Level-Up Gaming Vision</h2>
-                    <h3 className="about-vision ">
+                  <div className="m-5 p-5  text-center">
+                    <h2 className=" about-text-stroke about-vision about-text-stroke  mt-3 d-sm-none d-xs-none  d-md-none d-xs-none d-lg-block ">
+                      Level-Up Gaming Vision
+                    </h2>
+                    <h3 className=" about-text-stroke about-vision  about-text-stroke mt-3 d-sm-none d-xs-none  d-lg-block d-md-none">
                       Were In A Constant Persuit To Provide A Different Online
                       Gaming Experience...
                     </h3>
-
-                    <ol className="">
-                      <li className="">
-                        <p className=" mt-5">
-                          Focus Almost Exclusively On Games From The 4 Main
-                          Gaming Platforms
-                        </p>
-                      </li>
-                      <li>
-                        <p>
-                          {' '}
-                          Deliver An Additional Value With Events For Our
-                          Premium Customers
-                        </p>
-                      </li>
-                      <li>
-                        <p>
-                          Create A Unique And Beautiful Online Store - Mission
-                          Accomplished 😉
-                        </p>
-                      </li>
-                      <li className="">
-                        <p>Bring You The Best Possible Prices On The Market</p>
-                      </li>
-                      <li className="  ">
-                        <p>Be Attentive To Our Customers Requests</p>
-                      </li>
-                    </ol>
+                    <div className="col-12 vision-list">
+                      <ul className=" mt-3 list-unstyled ">
+                        <li>
+                          <p className="  mt-2">
+                            Focus Almost Exclusively On Games From The 4 Main
+                            Gaming Platforms
+                          </p>
+                        </li>
+                        <li>
+                          <p className="">
+                            Deliver An Additional Value With Events For Our
+                            Premium Customers
+                          </p>
+                        </li>
+                        <li>
+                          <p className="">
+                            Create A Unique And Beautiful Online Store - Mission
+                            Accomplished 😉
+                          </p>
+                        </li>
+                        <li>
+                          <p className="">
+                            Bring You The Best Possible Prices On The Market
+                          </p>
+                        </li>
+                        <li
+                          data-aos="fade-right"
+                          data-aos-offset="300"
+                          data-aos-duration="2500"
+                          data-aos-easing="ease-in-sine"
+                        >
+                          <p className="">
+                            Be Attentive To Our Customers Requests
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="d-flex justify-content-around d-sm-none  d-md-none d-xs-none d-lg-flex d-xl-flex">
+                      <img src={logo} className="vision-logo " alt="" />
+                      <img src={logo} className="vision-logo " alt="" />
+                    </div>
                   </div>
                 </div>
               </div>

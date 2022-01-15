@@ -1,0 +1,55 @@
+.cart-items .cart-wrapper .media {
+  width: 70vw;
+}
+.media .media-object {
+  width: 100px;
+  height: 100px;
+}
+@media only screen and (min-width: 350px) and (max-width: 600px) {
+  .checkout-table {
+    width: 50vw;
+  }
+  .cart-items .cart-wrapper .media {
+    width: 10vw;
+    height: 25vh;
+    font-size: 1px;
+  }
+
+  .cart-items {
+    width: 1vw;
+  }
+  .cart-title {
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .media-heading {
+    font-size: 15px;
+  }
+  .cart-btn {
+    position: relative;
+
+    right: 20vw;
+    top: 18vw;
+  }
+  .cart-cal {
+    position: relative;
+    left: 22vw;
+  }
+  .check-btn {
+    position: relative;
+    right: 50vw;
+  }
+  .chk {
+    background-color: red;
+    width: 10em;
+  }
+  .check-sec {
+    position: relative;
+    right: 50vw;
+  }
+  .media .media-object {
+    width: 3em;
+    height: 3em;
+  }
+}

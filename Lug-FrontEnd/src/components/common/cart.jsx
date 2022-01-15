@@ -1,14 +1,15 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import cartImg from "../../images/cart.jpg";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import cartImg from '../../images/cart.jpg';
 // import { Link } from "react-router-dom";
+import '../css components/cart.css';
 import {
   addToCart,
   subtractFromCart,
   removeItemFromCart,
-} from "../../Redux/cart/cart.actions";
-import { Link } from "react-router-dom";
-import userService from "../../services/userService";
+} from '../../Redux/cart/cart.actions';
+import { Link } from 'react-router-dom';
+import userService from '../../services/userService';
 class Cart extends Component {
   state = {
     user: null,
@@ -42,68 +43,65 @@ class Cart extends Component {
             src={cartImg}
             alt="shopping cart"
             className="align-self-center "
-            style={{ width: "10em", height: "10em" }}
+            style={{ width: '10em', height: '10em' }}
           />
           <h1 className="align-self-center"> Your Cart Is Empty</h1>;
         </div>
       );
     }
     return (
-      <table className="table table-hover mt-3">
+      <table className="table table-hover mt-3 checkout-table">
         <thead>
           <tr>
             <th>Product</th>
             <th>Quantity</th>
-            <th className="text-center">Price</th>
-            <th className="text-center">Total</th>
+            <th className="text-center cart-cal">Price</th>
+            <th className="text-center cart-cal">Total</th>
             <th>&nbsp;</th>
           </tr>
         </thead>
         <tbody>
           {items.map((item) => {
             return (
-              <tr key={item.id}>
-                <td className="col-sm-8 col-md-6">
+              <tr key={item.id} className="cart-items">
+                <td className="col-sm-8 col-md-6  cart-wrapper">
                   <div className="media d-flex">
                     <Link className="thumbnail pull-left" to="#">
-                      {" "}
+                      {' '}
                       <img
                         className="media-object"
                         src={item.img}
-                        style={{
-                          width: "100px",
-                          height: "100px",
-                        }}
+                        // style={{
+                        //   width: '100px',
+                        //   height: '100px',
+                        // }}
                         alt="bla bla"
-                      />{" "}
+                      />{' '}
                     </Link>
                     <div className="media-body ms-5">
                       <h4 className="media-heading mb-4">
-                        <span>{item.title}</span>
+                        <span className="cart-title">{item.title}</span>
                       </h4>
                       <h5 className="media-heading">
-                        {" "}
+                        {' '}
                         by <Link to={`/store/${item.brand}`}>{item.brand}</Link>
                       </h5>
                     </div>
                   </div>
                 </td>
-                <td
-                  className="col-sm-1 col-md-1"
-                  // style={{ textAlign: "center" }}
-                >
+                <td className="col-sm-1 col-md-1">
                   <strong className="ms-4">{item.qty}</strong>
                 </td>
-                <td className="col-sm-1 col-md-1 text-center">
+                <td className="col-sm-1 col-md-1 text-center cart-cal">
                   <strong>$ {item.price}</strong>
                 </td>
-                <td className="col-sm-1 col-md-1 text-center">
+                <td className="col-sm-1 col-md-1 text-center cart-cal">
                   <strong>$ {item.qty * item.price}</strong>
                 </td>
-                <td className="col-sm-1 col-md-1">
+                <td className="col-sm-1 col-md-1 cart-btn">
                   <button
                     type="button"
-                    className="btn btn-danger me-2"
+                    className="btn btn-danger me-2 "
                     onClick={() => this.handleRemove(item.id)}
                   >
                     <span className="glyphicon glyphicon-remove" /> Remove
@@ -120,7 +118,7 @@ class Cart extends Component {
             );
           })}
 
-          <tr>
+          <tr className="check-sec">
             <td> &nbsp; </td>
             <td> &nbsp; </td>
             <td> &nbsp; </td>
@@ -137,7 +135,7 @@ class Cart extends Component {
               </h5>
             </td>
           </tr>
-          <tr>
+          <tr className="check-sec">
             <td> &nbsp; </td>
             <td> &nbsp; </td>
             <td> &nbsp; </td>
@@ -158,15 +156,17 @@ class Cart extends Component {
             <td> &nbsp; </td>
             <td> &nbsp; </td>
             <td> &nbsp; </td>
-            <td>
+            <td className="check-btn">
               <button type="button" className="btn btn-default">
                 <span className="glyphicon glyphicon-shopping-cart" /> Continue
                 Shopping
               </button>
             </td>
-            <td>
-              <Link to="/checkout" className="btn btn-success">
-                Checkout <span className="glyphicon glyphicon-play" />
+            <td className="check-btn">
+              <Link to="/checkout">
+                <button className="chk">
+                  Checkout <span className="glyphicon glyphicon-play " />
+                </button>
               </Link>
             </td>
           </tr>

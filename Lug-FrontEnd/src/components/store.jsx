@@ -1,17 +1,17 @@
-import { connect } from "react-redux";
-import Product from "./product";
-import { removeItemFromCart, addToCart } from "../Redux/cart/cart.actions";
-import React from "react";
-import { SRLWrapper } from "simple-react-lightbox";
-import StoreSideNav from "./storeSidenav";
-
+import { connect } from 'react-redux';
+import Product from './product';
+import { removeItemFromCart, addToCart } from '../Redux/cart/cart.actions';
+import React from 'react';
+import { SRLWrapper } from 'simple-react-lightbox';
+import StoreSideNav from './storeSidenav';
+import './css components/store.css';
 class Store extends React.Component {
   // reducer function that take items by Id and add it as a props by click event
   handleClick = (id) => {
     this.props.addToCart(id);
   };
   //filter item from the items object and his "brand"
-  filtered = this.props.items.filter((item) => item.brand === "store");
+  filtered = this.props.items.filter((item) => item.brand === 'store');
 
   render() {
     return (
@@ -19,10 +19,12 @@ class Store extends React.Component {
         <div className="d-flex">
           {/* {side nav (playstation/nintendo / pc/xbox)} */}
           <StoreSideNav />
-          <div className="container ">
+          <div className="store-container">
             <SRLWrapper>
-              <div className="row  justify-content-around">
-                <div className="display-2 mt-2 text-center">Store</div>
+              <div className="row justify-content-around">
+                <div className="display-2 mt-2 text-center store-header">
+                  Store
+                </div>
                 {this.filtered.map((item) => {
                   return (
                     <Product

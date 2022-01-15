@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
-import "./css components/profile.css";
-import userService from "../services/userService";
-import React from "react";
-import jwtDecode from "jwt-decode";
+import { Link } from 'react-router-dom';
+import './css components/profile.css';
+import userService from '../services/userService';
+import React from 'react';
+import jwtDecode from 'jwt-decode';
 
-const TOKEN_KEY = "token";
+const TOKEN_KEY = 'token';
 
 class Profile extends React.Component {
   state = {
@@ -33,7 +33,7 @@ class Profile extends React.Component {
     this.setState({
       user: user,
     });
-    window.location = "/signup";
+    window.location = '/signup';
   };
   render() {
     const { user } = this.state;
@@ -98,10 +98,10 @@ class Profile extends React.Component {
                       <b className="text-center">Welcome </b>
                     </h4>
                     <p className="text-white text-capitalize">
-                      First Name: {user?.firstName}{" "}
+                      First Name: {user?.firstName}{' '}
                     </p>
                     <p className="text-white text-capitalize">
-                      Last Name: {user?.lastName}{" "}
+                      Last Name: {user?.lastName}{' '}
                     </p>
                     <p className="text-white text-capitalize">
                       Email: {user?.email}

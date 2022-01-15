@@ -1,5 +1,14 @@
-/* .product-main {
-  width: 14em;
-  border-radius: 50%;
+@media only screen and (min-width: 350px) and (max-width: 600px) {
+  .prod-card {
+    width: 50vw;
+    height: 50vh;
+    padding: 50px 50px 50px 50px;
+  }
+  .prod-card .card-body {
+    padding-bottom: 20px;
+  }
+  .prod-card .btn-card {
+    display: flex;
+    justify-content: center;
+  }
 }
- */
